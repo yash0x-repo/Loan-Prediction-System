@@ -12,7 +12,7 @@ bool fileExists(const string& filename) {
 int main() {
     cout << "=== Loan Prediction System ===\n";
 
-    string base_path = "E:/Loan_Predictor/Loan-Prediction-System"; // change this
+    string base_path = "E:/Loan_Approval_Predictor/Loan-Prediction-System"; // change this
 
     string model_file   = base_path + "/src/python/saved_models/loan_model.pkl";
     string train_script = "python " + base_path + "/src/python/train_model.py";

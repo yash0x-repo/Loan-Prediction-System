@@ -9,7 +9,8 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 
 # ---------------- Paths ----------------
-DATA_PATH = os.path.join("data/train.csv")
+BASE_DIR = os.path.dirname(__file__)  # src/python
+DATA_PATH = os.path.join(BASE_DIR, "..", "..", "data", "train.csv")
 MODEL_DIR = os.path.join(os.path.dirname(__file__), "saved_models")
 os.makedirs(MODEL_DIR, exist_ok=True)
 
