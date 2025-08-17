@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+
+# Models & artifacts
+src/python/saved_models/*
+!src/python/saved_models/.gitkeep
+
+# Data (don’t commit Kaggle CSV)
+src/data/*
+!src/data/.gitkeep
+
+# C++/build
+*.exe
+*.obj
+*.o
+*.out
+build/
+dist/
+
+# VS Code & OS
+.vscode/
+.DS_Store
+Thumbs.db
