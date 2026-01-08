@@ -73,6 +73,45 @@ def get_input_for_feature(col: str):
     # numeric
     return input_numeric(PROMPTS.get(col, f"{col} (number): "))
 
+
+def predict_loan(input_dict: dict):
+    """
+    input_dict: raw user input dictionary {feature_name: value}
+    returns: (prediction, probability)
+    """
+
+    # Build DataFrame in correct feature order
+    df = pd.DataFrame([[input_dict[col] for col in feature_order]],
+                      columns=feature_order)
+
+    # Encode categorical features
+    for col in categorical_features:
+        le = encoders[col]
+        val = df.at[0, col]
+
+        # Handle case-insensitive safety (Streamlit dropdowns may differ)
+        if val not in le.classes_:
+            low_map = {c.lower(): c for c in le.classes_}
+            if isinstance(val, str) and val.lower() in low_map:
+                df.at[0, col] = low_map[val.lower()]
+            else:
+                raise ValueError(f"Invalid value '{val}' for feature '{col}'")
+
+        df[col] = le.transform(df[col])
+
+    # Scale
+    X_scaled = scaler.transform(df[feature_order])
+
+    # Predict
+    pred = model.predict(X_scaled)[0]
+
+    proba = None
+    if hasattr(model, "predict_proba"):
+        proba = model.predict_proba(X_scaled)[0, int(pred)]
+
+    return pred, proba
+
+
 def main():
     print("\n====== Loan Approval Prediction ======\n")
     # Collect inputs in the exact feature order used during training
