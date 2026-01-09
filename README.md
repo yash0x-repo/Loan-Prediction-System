@@ -129,17 +129,12 @@ streamlit run src/python/streamlit_app.py
 
 ## 👨‍💻 Author
 
-**Yash Yeole**  
+**Yash Shashikant Yeole**  
 B.Tech, Electrical Engineering  
 Indian Institute of Technology Gandhinagar
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License**.
-
----
 
 ## ⭐ Acknowledgements
 
