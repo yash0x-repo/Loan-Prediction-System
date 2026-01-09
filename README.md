@@ -10,29 +10,27 @@ An end-to-end Loan Prediction System that uses Machine Learning to determine whe
 - 📊 Predicts loan approval using a trained ML model  
 - 🧠 Handles preprocessing: encoding, scaling, and feature alignment  
 - 🌐 Interactive web interface built with Streamlit  
-- 💾 Uses saved models (no retraining required during prediction)  
-- 📁 Clean and modular project structure  
 
 ---
 
 ## 📁 Project Structure
 
 Loan-Prediction-System/
-│
-├── data/
-│ └── train.csv
-│
-├── src/
-│ ├── cpp/
-│ │ └── driver.cpp
-│ │
-│ └── python/
-│ ├── train_model.py
-│ ├── predict.py
-│ └── streamlit_app.py
-│
-├── .gitignore
-├── requirements.txt
+│   \
+├── data/ \
+│ └── train.csv \
+│ \
+├── src/ \
+│ ├── cpp/ \
+│ │ └── driver.cpp \
+│ │ \
+│ └── python/ \
+│ ├── train_model.py \
+│ ├── predict.py \
+│ └── streamlit_app.py \
+│ \
+├── .gitignore \
+├── requirements.txt \
 └── README.md
 
 ---
